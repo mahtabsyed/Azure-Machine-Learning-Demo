@@ -1,0 +1,4 @@
+azureml-core==1.47.0
+azureml-sdk==1.47.0
+azureml-widgets==1.47.0 
+tensorflow==2.10.0

@@ -1,0 +1,13 @@
+### config.json for workspace
+{
+    "folders": [
+    {
+    "path": "."
+    }
+    ],
+    "settings": [
+    {
+        "python.terminal.activateEnvInCurrentTerminal": true,
+        "python.defaultInterpreterPath": ".venv/bin/python"
+    } ],
+}

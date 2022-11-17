@@ -1,0 +1,11 @@
+.ipynb_checkpoints
+.azureml
+.git
+.venv
+.vscode
+azureml-logs
+outputs
+logs
+azureml-setup
+docs
+compute.yml
