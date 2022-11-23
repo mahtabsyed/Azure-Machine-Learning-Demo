@@ -1,0 +1,13 @@
+How to fix this error
+
+SSL: CERTIFICATE_VERIFY_FAILED
+
+Applications/Python/Install Certificates.command
+
+Install certificates
+https://stackoverflow.com/questions/27835619/urllib-and-ssl-certificate-verify-failed-error
+
+
+# import ssl
+# https://stackoverflow.com/questions/69687794/unable-to-manually-load-cifar10-dataset
+# ssl._create_default_https_context = ssl._create_unverified_context
