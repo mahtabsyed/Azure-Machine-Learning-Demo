@@ -12,3 +12,6 @@ plotly==5.6.0
 umap_learn==0.5.3
 statsmodels==0.13.2
 missingno==0.5.1
+nltk==3.7
+gensim==4.1.2
+
