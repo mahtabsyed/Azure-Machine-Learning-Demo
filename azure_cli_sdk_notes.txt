@@ -1,0 +1,62 @@
+----------------------------------------------
+
+# Summary steps for creating mldemo and associated resources
+
+# Login to azure az login
+az login
+
+# Get the current default subscription using show
+az account show --output table
+
+# Check if I am in the right subscription
+# Get the current default subscription using list
+az account list --query "[?isDefault]"
+
+# Create mldemo Resource group
+az group create -n mldemo -l australiaeast
+
+# Create mldemows Machine Learning Work space and associated resources
+az ml workspace create -n mldemows -g mldemo -l australiaeast
+
+# Check resources created
+az resource list --output table
+# Youtube video
+https://www.youtube.com/watch?v=Zptm7BCweN0&ab_channel=TalkingtechwithTechielass 
+
+az resource list --resource-group mldemo --output table
+
+Failure Anomalies - mldemowsinsightsba917ae9  mldemo           global         microsoft.alertsmanagement/smartDetectorAlertRules
+Application Insights Smart Detection          mldemo           global         microsoft.insights/actiongroups
+mldemowsinsightsba917ae9                      mldemo           australiaeast  Microsoft.Insights/components
+mldemowskeyvault57335b7d                      mldemo           australiaeast  Microsoft.KeyVault/vaults
+mldemows                                      mldemo           australiaeast  Microsoft.MachineLearningServices/workspaces
+mldemowsstorage1a20e4cd0                      mldemo           australiaeast  Microsoft.Storage/storageAccounts
+
+# Create a storage account
+az storage account create --name mldemoblobmahtabsyed1 --resource-group mldemo --kind StorageV2 --sku Standard_LRS --location australiaeast
+
+# Create a container in the Storage account created above
+az storage container create --name mlfiles --account-name mldemoblobmahtabsyed1
+
+# Get storage account access key via portal or via cli
+az storage account keys list -g mldemo -n mldemoblobmahtabsyed1
+
+# Fill the YAML with the access key retrieved
+
+# Go to the folder with the YAML and create the Datastore mldata in the ML workspace
+az ml datastore create --file blobdatastore.yml --resource-group mldemo --workspace-name mldemows
+
+blobdatastore.yaml
+$schema: https://azuremlschemas.azureedge.net/latest/azureBlob.schema.json
+name: mldata
+type: azure_blob
+description: Datastore pointing to a blob container.
+account_name: mldemoblobmahtabsyed1
+container_name: mlfiles
+credentials:
+  account_key: 0s9joPh/AVDl5GdXRKPeHP7ceV4Va6+tVXknYQC4ukUR4S1on2XGy3dDtwGP5qgI22+ZoV9la4Cu+AStAm+zAQ==
+
+----------------------------------------------
+
+
+python -m pip install -r .azureml/requirements.txt

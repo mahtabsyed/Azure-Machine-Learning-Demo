@@ -1,8 +1,8 @@
 $schema: https://azuremlschemas.azureedge.net/latest/azureBlob.schema.json
-name: mldemoblob
+name: mldata
 type: azure_blob
 description: Datastore pointing to a blob container.
 account_name: mldemoblobmahtabsyed1
 container_name: mlfiles
 credentials:
-  account_key: pNWpS4YSc9WQ/CL9IhToqaWhEr82c9zunrOL7EQ4mqN7gpuYBlOBk91PhXXuivnKVPxRv6Gm1DxW+AStAdJLWQ==
+  account_key: 0s9joPh/AVDl5GdXRKPeHP7ceV4Va6+tVXknYQC4ukUR4S1on2XGy3dDtwGP5qgI22+ZoV9la4Cu+AStAm+zAQ==
